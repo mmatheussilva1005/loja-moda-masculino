@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ferro & Linho — Roupa masculina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1EE; --surface:#FFFFFF; --ink:#16231E; --muted:#56655E;
+  --accent:#1E3A32; --on-accent:#F2F5F2; --line:#D3DAD5; --camel:#B48B5A;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101916; --surface:#17231F; --ink:#E9EEEA; --muted:#9AAAA2;
+    --accent:#CFE0D6; --on-accent:#102019; --line:#2A3A34; --camel:#D2A878; color-scheme:dark;
+  }
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--camel);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--head);font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.01em}
+nav{display:flex;gap:24px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);padding:14px 26px;border-radius:4px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;font-family:var(--body)}
+.btn:hover{filter:brightness(1.12)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{padding:88px 0 72px;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(42px,7vw,84px);line-height:.98;letter-spacing:-.03em;margin:0 0 24px}
+.lead{font-size:20px;color:var(--muted);max-width:46ch;margin:0 0 32px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sw{aspect-ratio:1/1.1;border-radius:4px;padding:14px;display:flex;align-items:flex-end;font-size:14px;font-weight:600;color:#fff}
+.sw:nth-child(1){background:#1E3A32}.sw:nth-child(2){background:#B48B5A}
+.sw:nth-child(3){background:#2B3A55}.sw:nth-child(4){background:#7C8A83}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--head);font-weight:800;font-size:clamp(30px,4.5vw,44px);letter-spacing:-.02em;line-height:1.05;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 32px;max-width:52ch}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{background:transparent;border:1.5px solid var(--line);color:var(--ink);padding:8px 18px;border-radius:999px;font:500 15px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:4/4.4;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:13px;font-weight:600}
+.card .info{padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{margin:0;font-family:var(--head);font-size:20px;font-weight:500}
+.card .price{font-weight:600}
+.card .tam{color:var(--muted);font-size:14px}
+.card .btn{margin-top:12px;text-align:center;padding:11px 16px;font-size:15px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.pillars h3{font-family:var(--head);font-size:21px;margin:0 0 6px}
+.pillars p{margin:0;color:var(--muted)}
+.contact{background:var(--accent);color:var(--on-accent);border-radius:4px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.contact h2{margin:0 0 8px}.contact p{margin:0;opacity:.85}
+.contact .btn{background:var(--on-accent);color:var(--accent);justify-self:start}
+.contact dl{margin:0;display:grid;gap:10px}.contact dt{font-weight:600}.contact dd{margin:0;opacity:.85}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+[hidden]{display:none!important}
+.cartbtn{background:transparent;border:1.5px solid var(--ink);color:var(--ink);border-radius:4px;padding:8px 16px;font:600 15px var(--body);cursor:pointer}
+.cartbtn b{background:var(--accent);color:var(--on-accent);border-radius:999px;padding:1px 8px;margin-left:6px;font-size:13px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:20;display:none;justify-content:flex-end}
+.ov.on{display:flex}
+.panel{background:var(--bg);width:min(460px,100%);height:100%;overflow-y:auto;padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px))}
+.panel h2{font-size:28px}
+.close{float:right;background:none;border:0;color:var(--ink);font-size:30px;cursor:pointer;line-height:1}
+.line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.line small{display:block;color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+.qty button{width:30px;height:30px;border-radius:4px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:16px}
+.total{display:flex;justify-content:space-between;font-weight:600;font-size:20px;padding:16px 0}
+.f{display:grid;gap:12px;margin-bottom:12px}
+.f label{display:grid;gap:4px;font-weight:500;font-size:15px}
+.f input,.f select,.sel{padding:11px 12px;border:1.5px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);font:16px var(--body);width:100%}
+.card .sel{margin-top:10px;padding:9px 10px;font-size:15px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pix{text-align:center}
+#qr{display:flex;justify-content:center;margin:16px auto;background:#fff;padding:12px;border-radius:4px;width:max-content;min-height:60px}
+.code{word-break:break-all;font-size:12px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:10px;text-align:left;max-height:84px;overflow:auto}
+.note{color:var(--muted);font-size:14px}
+.stack{display:grid;gap:10px;margin-top:14px}
+.stack .btn{text-align:center}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding:48px 0}
+  .swatches{grid-template-columns:repeat(4,1fr)}
+  .contact{grid-template-columns:1fr;padding:32px 24px}
+  nav a:not(.btn){display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#topo">Ferro &amp; Linho</a>
+    <nav aria-label="Principal">
+      <a href="#colecao">Coleção</a>
+      <a href="#diferenciais">Por que nós</a>
+      <a href="#contato">Contato</a>
+      <button class="cartbtn" id="openCart" type="button">Sacola<b id="cnt">0</b></button>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="wrap hero">
+    <div>
+      <h1>Roupa masculina que dura mais que a moda.</h1>
+      <p class="lead">Camisas, calças e peças de alfaiataria em tecidos que respiram, com caimento que você sente no primeiro uso.</p>
+      <div class="actions">
+        <a class="btn" href="#colecao">Ver coleção</a>
+        <a class="btn ghost" href="#contato">Falar com a loja</a>
+      </div>
+    </div>
+    <div class="swatches" aria-hidden="true">
+      <div class="sw">Verde musgo</div><div class="sw">Camelo</div>
+      <div class="sw">Azul marinho</div><div class="sw">Cinza pedra</div>
+    </div>
+  </div>
+
+  <section id="colecao">
+    <div class="wrap">
+      <h2>Coleção</h2>
+      <p class="sub">Peças básicas bem feitas. Escolha o tamanho, monte sua sacola e pague por Pix sem sair da página.</p>
+      <div class="filters" role="group" aria-label="Filtrar por categoria">
+        <button class="chip" aria-pressed="true" data-f="todos">Tudo</button>
+        <button class="chip" aria-pressed="false" data-f="camisas">Camisas</button>
+        <button class="chip" aria-pressed="false" data-f="calcas">Calças</button>
+        <button class="chip" aria-pressed="false" data-f="casacos">Casacos</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="diferenciais">
+    <div class="wrap pillars">
+      <div><h3>Tecidos que respiram</h3><p>Linho, algodão e mistos pensados para o clima quente do dia a dia.</p></div>
+      <div><h3>Caimento certo</h3><p>Modelagens testadas e ajuste gratuito de barra na primeira compra.</p></div>
+      <div><h3>Troca em 7 dias</h3><p>Não serviu? Troque o tamanho sem burocracia.</p></div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Fale com a gente</h2>
+          <p>Tire dúvidas de tamanho e combine retirada ou entrega.</p>
+          <p style="margin-top:20px"><a class="btn" href="https://wa.me/5571999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a></p>
+        </div>
+        <dl>
+          <div><dt>Endereço</dt><dd>Rua Exemplo, 123, Centro</dd></div>
+          <div><dt>Horário</dt><dd>Seg a sáb, 9h às 19h</dd></div>
+          <div><dt>Instagram</dt><dd>@ferroelinho</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="ov" id="ov"><div class="panel" role="dialog" aria-modal="true" aria-label="Sacola de compras">
+<button class="close" id="close" type="button" aria-label="Fechar">×</button>
+<div id="s1"><h2>Sua sacola</h2><div id="items"></div>
+<div class="total"><span>Total</span><span id="tot"></span></div>
+<button class="btn" id="toS2" type="button" style="width:100%">Continuar</button></div>
+<div id="s2" hidden><h2>Seus dados</h2>
+<form class="f" id="fm" onsubmit="return false">
+<label>Nome completo<input id="nome" required autocomplete="name"></label>
+<label>WhatsApp com DDD<input id="tel" type="tel" required autocomplete="tel" placeholder="(71) 99999-9999"></label>
+<label>Como quer receber?<select id="ent"><option>Retirada na loja</option><option>Entrega</option></select></label>
+<div id="endw" class="f" hidden>
+<label>Estado<select id="uf"></select></label>
+<label>Cidade ou região<input id="cid" autocomplete="address-level2"></label>
+<label>Bairro<input id="bai"></label>
+<label>Rua<input id="rua" autocomplete="address-line1"></label>
+<div class="row2"><label>Número<input id="num" placeholder="123 ou S/N"></label><label>Complemento<input id="comp" placeholder="Apto, bloco (opcional)"></label></div>
+</div>
+<label>Observações (opcional)<input id="obs"></label>
+</form>
+<p class="note">O frete da entrega é combinado com a loja pelo WhatsApp.</p>
+<div class="stack"><button class="btn" id="toS3" type="button">Ir para o pagamento</button><button class="btn ghost" id="back1" type="button">Voltar</button></div></div>
+<div id="s3" class="pix" hidden><h2>Pague com Pix</h2>
+<p class="note">Valor: <strong id="pv"></strong>. Escaneie o QR code ou use o Pix copia e cola no app do seu banco.</p>
+<div id="qr"></div><div class="code" id="code"></div>
+<div class="stack"><button class="btn ghost" id="copy" type="button">Copiar código Pix</button>
+<a class="btn" id="send" target="_blank" rel="noopener">Já paguei, enviar pedido</a>
+<button class="btn ghost" id="back2" type="button">Voltar</button></div>
+<p class="note">Depois de pagar, toque em “Já paguei” para enviar o pedido completo à loja pelo WhatsApp.</p></div>
+</div></div>
+
+<footer><div class="wrap">© 2026 Ferro &amp; Linho. Todos os direitos reservados.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const produtos=[
+ {n:"Camisa de linho",c:"camisas",p:189,t:"P ao GG",cor:"#1E3A32",d:"Verde musgo"},
+ {n:"Camisa oxford",c:"camisas",p:159,t:"P ao GG",cor:"#2B3A55",d:"Azul marinho"},
+ {n:"Calça de alfaiataria",c:"calcas",p:259,t:"38 ao 48",cor:"#7C8A83",d:"Cinza pedra"},
+ {n:"Calça chino",c:"calcas",p:219,t:"38 ao 48",cor:"#B48B5A",d:"Camelo"},
+ {n:"Jaqueta leve",c:"casacos",p:329,t:"P ao GG",cor:"#2B3A55",d:"Azul marinho"},
+ {n:"Blazer desestruturado",c:"casacos",p:459,t:"P ao GG",cor:"#1E3A32",d:"Verde musgo"}
+];
+const grid=document.getElementById("grid");
+const brl=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function render(f){
+  grid.innerHTML="";
+  produtos.filter(x=>f==="todos"||x.c===f).forEach(x=>{
+    const el=document.createElement("article");el.className="card";
+    const tam=x.t.startsWith("P")?["P","M","G","GG"]:["38","40","42","44","46","48"];
+    el.innerHTML='<div class="img" style="background:'+x.cor+'">'+x.d+'</div>'+
+      '<div class="info"><h3>'+x.n+'</h3><span class="price">'+brl(x.p)+'</span>'+
+      '<select class="sel" aria-label="Tamanho de '+x.n+'">'+tam.map(t=>'<option>'+t+'</option>').join("")+'</select>'+
+      '<button class="btn" type="button">Adicionar à sacola</button></div>';
+    el.querySelector(".btn").onclick=()=>add(x,el.querySelector(".sel").value);
+    grid.appendChild(el);
+  });
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));
+  render(b.dataset.f);
+}));
+render("todos");
+
+// CONFIGURE AQUI: dados reais da loja
+const CFG={whats:"5571999999999",pixKey:"sua-chave-pix-aqui",nome:"FERRO E LINHO",cidade:"CAMACARI"};
+let cart=[],ped=null;
+const $=id=>document.getElementById(id);
+const total=()=>cart.reduce((s,c)=>s+c.p*c.q,0);
+function add(p,t){const k=p.n+"|"+t;const i=cart.find(c=>c.k===k);if(i)i.q++;else cart.push({k,n:p.n,d:p.d,t,p:p.p,q:1});upd();open_();}
+function upd(){
+  $("cnt").textContent=cart.reduce((s,c)=>s+c.q,0);
+  $("tot").textContent=brl(total());
+  $("items").innerHTML=cart.length?"":'<p class="note">Sua sacola está vazia.</p>';
+  cart.forEach((c,i)=>{const d=document.createElement("div");d.className="line";
+    d.innerHTML='<div>'+c.n+'<small>'+c.d+' · Tam. '+c.t+'</small><div class="qty"><button type="button" aria-label="Diminuir">−</button><span>'+c.q+'</span><button type="button" aria-label="Aumentar">+</button></div></div><strong>'+brl(c.p*c.q)+'</strong>';
+    const b=d.querySelectorAll("button");
+    b[0].onclick=()=>{c.q--;if(c.q<1)cart.splice(i,1);upd()};
+    b[1].onclick=()=>{c.q++;upd()};
+    $("items").appendChild(d)});
+  $("toS2").disabled=!cart.length;
+}
+function step(n){["s1","s2","s3"].forEach((s,i)=>$(s).hidden=i!==n-1)}
+function open_(){step(1);$("ov").classList.add("on")}
+function shut(){$("ov").classList.remove("on")}
+$("openCart").onclick=open_;
+$("close").onclick=shut;
+$("ov").addEventListener("click",e=>{if(e.target===$("ov"))shut()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")shut()});
+$("toS2").onclick=()=>step(2);
+$("back1").onclick=()=>step(1);
+$("back2").onclick=()=>step(2);
+const UFS={AC:"Acre",AL:"Alagoas",AP:"Amapá",AM:"Amazonas",BA:"Bahia",CE:"Ceará",DF:"Distrito Federal",ES:"Espírito Santo",GO:"Goiás",MA:"Maranhão",MT:"Mato Grosso",MS:"Mato Grosso do Sul",MG:"Minas Gerais",PA:"Pará",PB:"Paraíba",PR:"Paraná",PE:"Pernambuco",PI:"Piauí",RJ:"Rio de Janeiro",RN:"Rio Grande do Norte",RS:"Rio Grande do Sul",RO:"Rondônia",RR:"Roraima",SC:"Santa Catarina",SP:"São Paulo",SE:"Sergipe",TO:"Tocantins"};
+$("uf").innerHTML='<option value="">Selecione</option>'+Object.entries(UFS).map(([k,v])=>'<option value="'+k+'">'+v+'</option>').join("");
+$("ent").onchange=()=>{const e=$("ent").value==="Entrega";$("endw").hidden=!e;["uf","cid","bai","rua","num"].forEach(k=>$(k).required=e)};
+
+function tlv(i,v){return i+String(v.length).padStart(2,"0")+v}
+function crc(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021):(c<<1);c&=0xFFFF}return c.toString(16).toUpperCase().padStart(4,"0")}
+function pix(v,txid){
+  const m=tlv("00","br.gov.bcb.pix")+tlv("01",CFG.pixKey);
+  const p=tlv("00","01")+tlv("26",m)+tlv("52","0000")+tlv("53","986")+tlv("54",v.toFixed(2))+tlv("58","BR")+tlv("59",CFG.nome.slice(0,25))+tlv("60",CFG.cidade.slice(0,15))+tlv("62",tlv("05",txid))+"6304";
+  return p+crc(p);
+}
+function msg(id){
+  const f=k=>$(k).value.trim();
+  let m="*Novo pedido "+id+"*\n\n*Cliente:* "+f("nome")+"\n*WhatsApp:* "+f("tel")+"\n*Recebimento:* "+f("ent");
+  if(f("ent")==="Entrega")m+="\n*Endereço:*\nRua: "+f("rua")+", nº "+f("num")+(f("comp")?" ("+f("comp")+")":"")+"\nBairro: "+f("bai")+"\nCidade/região: "+f("cid")+"\nEstado: "+$("uf").value;
+  m+="\n\n*Itens:*\n"+cart.map(c=>"• "+c.q+"x "+c.n+" ("+c.d+", tam. "+c.t+") – "+brl(c.p*c.q)).join("\n");
+  m+="\n\n*Total:* "+brl(total())+"\n*Pagamento:* Pix (cliente informa que já pagou)";
+  if(f("obs"))m+="\n*Obs:* "+f("obs");
+  return m;
+}
+$("toS3").onclick=()=>{
+  if(!$("fm").reportValidity())return;
+  const id="FL"+Date.now().toString(36).toUpperCase();
+  const code=pix(total(),id);
+  ped={id,code};
+  $("pv").textContent=brl(total());
+  $("code").textContent=code;
+  $("qr").innerHTML="";
+  try{new QRCode($("qr"),{text:code,width:180,height:180})}catch(e){}
+  $("send").href="https://wa.me/"+CFG.whats+"?text="+encodeURIComponent(msg(id));
+  $("copy").textContent="Copiar código Pix";
+  step(3);
+};
+$("copy").onclick=async()=>{try{await navigator.clipboard.writeText(ped.code);$("copy").textContent="Código copiado"}catch(e){$("copy").textContent="Selecione o código acima e copie"}};
+upd();step(1);
+</script>
+</body>
+</html>
